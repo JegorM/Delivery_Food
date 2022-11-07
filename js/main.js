@@ -74,7 +74,7 @@ mocks.forEach((mock, index) => {
                         <span class="button-card-text">В корзину</span>
                         <img class="button-card-image" src="img/shopping-cart-white.svg" alt="cart">
                     </button>
-                    <strong class="card-price-bold">${mock.price} ₽</strong>
+                    <strong class="card-price-bold">${mock.price} ₴</strong>
                 </div>
             </div>
         </div>

@@ -93,7 +93,7 @@ const createRestaurant = (restaurant) => {
                         <img src="./img/star.svg" alt="rating" class="rating-star">
                         ${stars}
                     </div>
-                    <div class="price">От ${price} ₽</div>
+                    <div class="price">От ${price} ₴</div>
                     <div class="category">${kitchen}</div>
                 </div>
             </div>
@@ -124,7 +124,7 @@ const createGood = (good, index) => {
                         <span class="button-card-text">В корзину</span>
                         <img class="button-card-image" src="img/shopping-cart-white.svg" alt="cart">
                     </button>
-                    <strong class="card-price-bold">${price} ₽</strong>
+                    <strong class="card-price-bold">${price} ₴</strong>
                 </div>
             </div>
         </div>
@@ -140,7 +140,7 @@ const createCartItem = (product) => {
     `
         <div class="food-row" data-id="${id}" >
             <span class="food-name">${name}</span>
-            <strong class="food-price">${price} ₽</strong>
+            <strong class="food-price">${price} ₴</strong>
             <div class="food-counter">
                 <button class="counter-button">-</button>
                 <span class="counter">${amount}</span>
@@ -169,7 +169,7 @@ const setRestaurantHeading = ({ name, stars, price, kitchen }) => {
                 `
                 : ""
             }
-            ${price ? `<div class="price">От ${price} ₽</div>` : ""}
+            ${price ? `<div class="price">От ${price} ₴</div>` : ""}
             <div class="category">${kitchen}</div>
         </div>
     `
@@ -293,7 +293,7 @@ const toggleModalCart = () => {
         cart.products.reduce(
           (total, { price, amount }) => total + price * amount,
           0
-        ) + " ₽";
+        ) + " ₴";
     }
   });
 
@@ -382,7 +382,7 @@ const toggleModalCart = () => {
         localStorage.setItem(CART_TOKEN, JSON.stringify(cart.products));
 
         cart.totalPrice += parseInt(price);
-        cartPrice.innerHTML = cart.totalPrice + " ₽";
+        cartPrice.innerHTML = cart.totalPrice + " ₴";
       } else {
         openGoods(event);
       }
@@ -404,5 +404,5 @@ const toggleModalCart = () => {
     restaurants.forEach(createRestaurant);
   });
 
-  cartPrice.innerHTML = cart.totalPrice + " ₽";
+  cartPrice.innerHTML = cart.totalPrice + " ₴";
 })();
